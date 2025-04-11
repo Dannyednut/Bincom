@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-style: ridge;
+        }
+        label {
+            
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        input[type="text"], 
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="POST" action="/submit">
+        <h2> Register polling unit</h2>
+        <div class="lga">
+            <label for="lga">Local governmemt</label><br>
+            <select id="lga-select" name="lga">
+                {% for lga_id, lga_name in lgas.items() %}
+                <option value='{{ lga_id }}'>{{ lga_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="ward">
+            <label for="ward">Ward</label><br>
+            <select id="ward-select" name="ward">
+                {% for ward_id, ward_name in wards.items() %}
+                <option value='{{ ward_id }}'>{{ ward_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="poll_unit">
+            <h4>New polling unit information</h4>
+            <label for="polling_unit_id">Polling unit ID:</label><br>
+            <input type="number" id="id" name="polling_unit_id" required><br>
+
+            <label for="polling_unit_name">Polling unit name:</label><br>
+            <input type="text" id="unit_name" name="polling_unit_name" required><br>
+
+            <label for="polling_unit_description">Polling unit description:</label><br>
+            <input type="text" id="unit_description" name="polling_unit_description" required><br>
+
+            <label for="unique_ward_id">Polling unit unique ward ID:</label><br>
+            <input type="text" id="unique_ward_id" name="uniquewardid"><br>
+
+
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="entered_by_user" required><br>
+
+        </div>
+
+        <div>
+            <h4>Party scores</h4>
+            {% for partyname in parties %}
+            <label for="party">{{partyname}}:</label><br>
+            <input type="number" id="{{partyname}}" name="{{partyname}}" required><br><br>
+            {% endfor %}
+        </div>
+        <div id="submit">
+            <input type="submit"value="Submit">
+        </div>
+    </form>
+</body>
+</html>

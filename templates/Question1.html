@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2{
+      text-align: center;
+    }
+    .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    }
+
+    .vote-count {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    }
+
+    .vote-percent {
+    font-size: 36px;
+    color: #666;
+    }
+
+    .poll-results {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .vote-box {
+      width: 300px;
+      height: 200px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 20px;
+    }
+
+
+</style>
+</head>
+<body>
+  <h2>Polling Unit: {{ poll_title }} results</h2>
+  <div class="poll-results">
+      {% for option, votes in results %}
+          <div class="vote-box">
+            <div class="title">{{ option }}</div>
+            <div class="vote-count">{{ votes }} Votes</div>
+            <div class="vote-percent">{{((votes/1000)*100) | round(2) }}%</div>
+          </div>
+      {% endfor %}
+  </div>
+</body>
+</html>
+
+  
+  
