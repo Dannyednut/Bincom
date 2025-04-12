@@ -73,7 +73,7 @@ def index():
 
 
         # Render template with fetched data
-        return render_template("third.html",  lgas=lgas, wards = wards, parties = parties)
+        return render_template("Question3.html",  lgas=lgas, wards = wards, parties = parties)
     except mysql.connector.Error as err:
         return f"Error: {err}"
     except Exception as e:
