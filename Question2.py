@@ -70,7 +70,7 @@ def get_results(lga_id):
 
 
         # Render template with fetched data
-        return render_template("main.html", poll_title=parties, lgas=lgas, results=d, total=total)
+        return render_template("Question2.html", poll_title=parties, lgas=lgas, results=d, total=total)
     except mysql.connector.Error as err:
         return f"Error: {err}"
     except Exception as e:
