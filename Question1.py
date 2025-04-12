@@ -41,7 +41,7 @@ def index():
 
 
     # Render template with fetched data
-    return render_template("index.html", poll_title = pu_name[0][6][:13], totol_votes = 100, results=rows)
+    return render_template("Question1.html", poll_title = pu_name[0][6][:13], totol_votes = 100, results=rows)
 
 if __name__ == "__main__":
     app.run()
