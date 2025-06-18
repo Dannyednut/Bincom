@@ -8,3 +8,7 @@ services:
       command: python manage.py runserver 0.0.0.0:8000
     healthcheck:
       command: curl -f http://localhost:8000
+    dependencies:
+      - psycopg2-binary==2.9.3
+      - psycopg==3.2.9
+      - psycopg2==2.9.10
