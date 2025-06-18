@@ -70,6 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = ['https://advenza.onrender.com']
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
