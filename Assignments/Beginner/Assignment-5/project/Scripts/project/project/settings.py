@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'render',
-        'USER': 'render',
-        'PASSWORD': 'render',
-        'HOST': 'localhost',
+        'NAME': 'advenza',
+        'USER': 'advenza_user',
+        'PASSWORD': 'ZegynIsjzygpTOBWbShJnsjzg9mV2rWy',
+        'HOST': 'dpg-d19in5re5dus739289s0-a',
         'PORT': '5432',
     }
 }
