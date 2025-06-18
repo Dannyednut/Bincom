@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-django-app
+    env: python
+    build:
+      command: pip install -r requirements.txt
+    run:
+      command: python manage.py runserver 0.0.0.0:8000
+    healthcheck:
+      command: curl -f http://localhost:8000
