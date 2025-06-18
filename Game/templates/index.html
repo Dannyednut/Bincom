@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Tic Tac Toe</h1>
+        <button onclick="createGame()">Start New Game</button>
+        <input id="roomInput" placeholder="Enter Room Code">
+        <button onclick="joinGame()">Join Game</button>
+        <script>
+            function createGame() {
+                fetch("/create").then(res => res.json()).then(data => {
+                    window.location.href = "/game/" + data.room;
+                });
+            }
+            function joinGame() {
+                const room = document.getElementById("roomInput").value;
+                window.location.href = "/game/" + room;
+            }
+    </script>
+    </body>
+</html>

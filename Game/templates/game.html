@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Room {{ room }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+</head>
+<body>
+  <h1>Room: {{ room }}</h1>
+  <div id="status"></div>
+  <div id="board"></div>
+  <button onclick="resetGame()">Restart Game</button>
+  <script>
+    const room = "{{ room }}";
+    const socket = io();
+    socket.emit("join", { room });
+
+    socket.on("update", data => {
+      const { board, turn, winner, tie } = data;
+      document.getElementById("status").innerText =
+        winner ? `Player ${winner} wins!` : tie ? "It's a tie!" : `Player ${turn}'s turn`;
+
+      const boardEl = document.getElementById("board");
+      boardEl.innerHTML = "";
+      board.forEach((row, i) => {
+        row.forEach((cell, j) => {
+          const btn = document.createElement("button");
+          btn.innerText = cell;
+          btn.onclick = () => socket.emit("move", { room, row: i, col: j });
+          btn.disabled = cell !== " " || winner || tie;
+          btn.className = "cell";
+          boardEl.appendChild(btn);
+        });
+        boardEl.appendChild(document.createElement("br"));
+      });
+    });
+
+    function resetGame() {
+      socket.emit("reset", { room });
+    }
+  </script>
+</body>
+</html>

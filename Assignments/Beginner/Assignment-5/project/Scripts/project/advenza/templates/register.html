@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_page</title>
+
+    <style>
+        #container{
+            margin: 15%;
+            margin-top: 0;
+            width: 70%;
+        }
+
+        form{
+            width: 30%;
+            height: 100%;
+            margin: 35%;
+            margin-bottom: 1%;
+            margin-top: 1%;
+
+            background-color: #e1e4cb;
+            padding: 10px;
+            border-radius: 10px;
+            
+        }
+
+        #inputs{
+            text-align: left;
+            width: 80%;
+            margin: 10%;
+            margin-bottom: 2%;
+        }
+
+        #header{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #message{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #button{
+            text-align: center;
+        }
+
+        .box{
+            width: 99%;
+            border: none;
+            border-bottom: solid black 2px;
+            outline: none;
+            background-color: #e1e4cb;
+
+        }
+
+        #pair{
+            display: flex;
+            height: fit-content;
+            margin-top: 5px;
+        }
+
+        .error{
+            color: red;
+            font-size: smaller;
+        }
+
+        #age{
+            display: flex;
+            width: 50%;
+            height: 50%;
+        }
+
+        #country{
+            display: flex;
+        }
+    </style>
+
+    <script>
+        function validateName(){
+            var name = document.getElementById("name");
+            var error = document.getElementById("error1");
+            if(name.value.length < 5){
+                error.textContent = "fullname must be gretaer than 5 characters";
+                return false;
+            }else{
+                error.textContent=""
+                return true;
+            }
+        }
+
+        function validateEmail(){
+            var email = document.getElementById("email");
+            var error = document.getElementById("error2");
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!emailPattern.test(email.value)){
+                error.textContent = "please enter a valid email";
+                return false;
+            }else{
+                error.textContent=""
+                return true;
+            }
+        }
+
+        function validate(){
+            if (validateName()){
+                if(validateEmail()){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+        
+
+    </script>
+</head>
+<body>
+    <form onsubmit= "return validate()" method="post" action="record/">
+        {% csrf_token %}
+        <div id="header">
+            <h3>Register to keep updated!</h3>
+        </div>
+        <div id="message">
+            <span>{{message}}</span>
+        </div>
+        <div id="container">
+            <div id="inputs">
+                <input id="name" name= "name" class="box" type="text" placeholder="Full Name" required><br>
+                <span id="error1" class="error"></span><br>
+                <input id="email" name= "email" class="box" type="email" placeholder="Email address" required><br>
+                <span id="error2" class="error"></span><br>
+                <br>
+                <label>Gender: </label> <label for="male">male</label> 
+                <input type="radio" name="gender" value="male" required>
+                <label for="female">female</label>
+                <input type="radio" name="gender" value="male" required><br><br>
+                accept our terms and conditions: <input type="checkbox" required><br><br>
+
+            </div>
+
+            <div id="button">
+                <button type="submit">submit</button>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>

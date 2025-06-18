@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/57b4eff1d2.js" crossorigin="anonymous"></script>
+    <style>
+        :root{
+            --primary: #e45b33;
+            --secondary: #fffdfc;
+            --dark: #e1e4cb;
+        }
+
+        body{
+            background-color: var(--dark);
+            margin: 0;
+        }
+
+        .container{
+            padding: 10px;
+        }
+        
+        h2{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            margin: 0;
+            margin-top: 10px;
+
+        }
+        #hero-section{
+            background-image: url("img/PurposeHeader.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #main{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        #hero-container{
+            display: block;
+        }
+        
+        #nav{
+            display: flex;
+            justify-content: space-around;
+            font-family: sans-serif;
+            align-items: center;
+            padding: 0
+        }
+        nav{
+            height: fit-content;
+        }
+
+
+
+        #download{
+            margin-left: 50%;
+            height: 40px;
+            width: 45%;
+            background-color: black;
+            border: none;
+            border-radius: 10px;
+            color: white;
+        }
+
+        #hero-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .heros h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 90px;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        #name{
+            color: var(--primary);
+        }
+
+        .heros p{
+            font-family: sans-serif;
+            font-weight: 600;
+        }
+
+        .heros button{
+            border: none;
+            border-radius: 10px;
+            margin-top: 50px;
+            width: 150px;
+            height: 50px;
+            background-color: var(--secondary);
+
+        }
+
+        .heros{
+            width: 50%;
+            flex-direction: column;
+        }
+
+        #extra{
+            display: grid;
+            grid-template-columns: 1fr 0.5fr;
+        }
+
+        #extra h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 70px;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        #extra p{
+            margin: 20%;
+            margin-right: 0;
+            margin-left: 0;
+            font-size: small;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            height: auto;
+        }
+
+        
+
+        .feature{
+            width: 25%;
+            height: 450px;
+            border-radius: 10px;
+            flex-direction: column;
+            padding: 15px;
+            border: var(--primary);
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }
+
+        #features{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .feature div{
+            position: absolute;
+            bottom: 10px;
+        }
+
+        .feature span{
+            background-color: var(--secondary);
+            width: 20px;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            float: right;
+        }
+
+        .feature h3{
+            color: var(--secondary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 50px;
+            font-weight: 200;
+        }
+
+        .feature p{
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .flex{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 70%;
+        }
+
+        .item{
+            width: 25%;
+            justify-content: start;
+        }
+        #about{
+            margin-top: 0;
+            justify-content: center;
+        }
+
+        footer{
+            font-family: sans-serif;
+            margin-top: 5%;
+        }
+
+        #overall{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #item1{
+            width: 20%;
+        }
+
+        #item1 p{
+            font-size: small;
+        }
+
+        #socials a{
+            text-decoration: none;
+            color: black;
+        }
+
+        #first{
+            background-image: url("img/booking.jpg");
+        }
+
+        #second{
+            background-image: url("img/recommend.jpeg");
+        }
+
+        #third{
+            background-image: url("img/reviews.jpeg");
+        }
+        ul{
+            line-height: 25px;
+        }
+
+      
+
+        @media (max-width: 800px){
+            .heros{
+                width: auto;
+            }
+        }
+
+        @media (max-width: 700px){
+            #extra{
+                display: block;
+            }
+
+            #extra p{
+                margin: 5%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 680px){
+            #features{
+                display: block;
+                
+            }
+
+            .feature{
+                width: 75%;
+                height: 400px;
+                border-radius: 10px;
+                padding: 15px;
+                margin: 12%;
+                position: relative;
+                background-size: cover;
+                background-repeat: no-repeat;
+                
+            }
+        }
+
+        @media (max-width: 600px){
+           #overall{
+                display: block;
+           }
+
+           #item1{
+                width: auto;
+           }
+
+           .flex{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: auto;
+           }
+
+           ul{
+            padding: 0;
+           }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="hero-section">
+        <header id="main">
+            <h2 class="fa-light fa-book-open-reader"> Advenza</h2>
+
+            <nav>
+                <ul id="nav" style="list-style-type:none;">
+                    <li>About</li>
+                    <li>Reviews</li>
+                    <li>Blogs&News</li>
+                </ul>
+            </nav>
+
+            <a href="download/"><button id="download">Get Advenza App</button></a>
+        </header>
+            
+        <section id="hero-container">
+            <div class="heros">
+                <h1>Explore the World with <span id="name">Advenza</span> App</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci deleniti maiores porro sapiente voluptatum aliquid 
+                    nihil vitae doloremque labore. Ab voluptas, repudiandae corrupti sunt atque eveniet molestias debitis magni aut?
+                </p>
+                <a href="register/"><button>Start Now</button></a>
+            </div>
+            <div class="heros">
+                
+            </div>
+        </section>
+    </div>
+
+    <section class="container" id="extra">
+        <header class="">
+            <h1>Your Perfect Trip.<br>Just A Tap Away!</h1>
+        </header>
+        <article>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga mollitia, dolorum veniam esse ea sed 
+                debitis. Soluta amet hic autem eum nulla. Saepe mollitia quas nulla nam dolorum labore quisquam!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga mollitia, dolorum veniam esse ea sed 
+                debitis. Soluta amet hic autem eum nulla. Saepe mollitia quas nulla nam dolorum labore quisquam!
+            </p>
+        </article>
+    </section>
+
+    <section class="container" id="features">
+        <div class="feature" id="first">
+            <span class="fa-solid fa-suitcase"></span>
+            <div class="content">
+                <h3>Effortless Booking</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos doloribus odio atque voluptate maxime magnam nobis numquam 
+                    inventore illo quisquam vitae nisi, veniam natus. Aperiam velit exercitationem voluptate. Aspernatur, architecto!
+                </p>
+            </div>
+        </div>
+        <div class="feature" id="second">
+            <span class="fa-solid fa-web-awesome"></span>
+            <div class="content">
+                <h3>Exclusive Deals</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos doloribus odio atque voluptate maxime magnam nobis numquam 
+                    inventore illo quisquam vitae nisi, veniam natus. Aperiam velit exercitationem voluptate. Aspernatur, architecto!
+                </p>
+            </div>
+        </div>
+        <div class="feature" id="third">
+            <span class="fa-solid fa-comments"></span>
+            <div class="content">
+                <h3>Real Traveler Reviews</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos doloribus odio atque voluptate maxime magnam nobis numquam 
+                    inventore illo quisquam vitae nisi, veniam natus. Aperiam velit exercitationem voluptate. Aspernatur, architecto!
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="container">
+        <div id="overall">
+        <div id="item1">
+            <h4 class="fa-solid fa-suitcase"> Advenza</h4>
+            <p id="about">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime fuga cumque eius enim sapiente, accusamus nostrum 
+                placeat mollitia harum, reiciendis nemo illo eligendi praesentium consectetur ipsum distinctio aliquid incidunt illum.
+            </p>
+        </div>
+        <div class="flex">
+            
+            <div class="item">
+                <ul style="list-style-type:none;">
+                    <li><h4>Company</h4></li>
+                    <li>About Advenza</li>
+                    <li>Reviews</li>
+                    <li>Blogs & News</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <ul style="list-style-type:none;">
+                    <li><h4>Support</h4></li>
+                    <li>Guides</li>
+                    <li>FAQs</li>
+                    <li>Docs</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                
+                <ul style="list-style-type:none;">
+                    <li><h4>Legal</h4></li>
+                    <li>Terms of Service</li>
+                    <li>Privacy Policy</li>
+                    <li>Refund Policy</li>
+                </ul>
+            </div>
+
+            <address class="item" id="socials">
+                <ul style="list-style-type:none;">
+                    <li><h4>Contact us</h4></li>
+                    <li><a class="fa-brands fa-facebook-f" rel="noreferrer" target="_blank" href="facebook.com"><span> facebook</span></a></li>
+                    <li><a class="fa-brands fa-twitter" rel="noreferrer" target="_blank" href="twitter.com"><span> twitter</span><br></a></li>
+                    <li><a class="fa-brands fa-instagram" rel="noreferrer" target="_blank" href="instagram.com"><span> Instagram</span></a></li>
+                    <li><a href="tel:+2348111039996"><i class="fa-solid fa-phone"></i></i>  +2348111039996</a></li>
+                </ul>
+            </address>
+        </div>
+        </div>
+
+        <div id="copywrite">
+            <p>©2025, Advenza. All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
