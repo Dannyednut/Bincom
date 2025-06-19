@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from .models import User
+from .models import advenza_user
 
 def index(request):
     template = loader.get_template('index.html')
@@ -20,7 +20,7 @@ def record(request):
     email = request.POST['email']
     gender = request.POST['gender']
 
-    new_user = User(name=name, email=email, gender=gender)
+    new_user = advenza_user(name=name, email=email, gender=gender)
     new_user.save()
     template = loader.get_template('register.html')
     message = 'Application received! We\'ll update you soon.'
