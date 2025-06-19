@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.template import loader
+
 
 urlpatterns = [
     path('', views.index, name='index'),

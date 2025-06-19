@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ejl4zrlxk!ncz!(4n=p94##h2&0rj5!#gqr&49856d#-f&m9$3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['advenza.onrender.com']
+ALLOWED_HOSTS = ['advenza.onrender.com', '127.0.0.1']
 
 
 # Application definition

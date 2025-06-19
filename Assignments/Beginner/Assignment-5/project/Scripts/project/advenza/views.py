@@ -26,3 +26,5 @@ def record(request):
     message = 'Application received! We\'ll update you soon.'
     return HttpResponse(template.render({'message': message}, request))
 # Create your views here.
+
+

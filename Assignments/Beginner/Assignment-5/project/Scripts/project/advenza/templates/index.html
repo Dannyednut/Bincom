@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/57b4eff1d2.js" crossorigin="anonymous"></script>
+    {% load static %}
     <style>
         :root{
             --primary: #e45b33;
@@ -29,7 +30,7 @@
 
         }
         #hero-section{
-            background-image: url("img/PurposeHeader.jpg");
+            background-image: url("{% static 'advenza/images/PurposeHeader.jpg' %}");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -217,15 +218,15 @@
         }
 
         #first{
-            background-image: url("img/booking.jpg");
+            background-image: url("{% static 'advenza/images/booking.jpg' %}");
         }
 
         #second{
-            background-image: url("img/recommend.jpeg");
+            background-image: url("{% static 'advenza/images/recommend.jpeg' %}");
         }
 
         #third{
-            background-image: url("img/reviews.jpeg");
+            background-image: url("{% static 'advenza/images/reviews.jpeg' %}");
         }
         ul{
             line-height: 25px;
